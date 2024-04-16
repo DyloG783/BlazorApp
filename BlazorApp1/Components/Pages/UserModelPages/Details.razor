@@ -1,0 +1,45 @@
+﻿@page "/usermodels/details"
+@inject BlazorApp1.Data.AppDbContext DB
+@using BlazorApp1.Models
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h4>UserModel</h4>
+    <hr />
+    @if (usermodel is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">UserName</dt>
+            <dd class="col-sm-10">@usermodel.UserName</dd>
+        </dl>
+        <div>
+            <a href="@($"/usermodels/edit?id={usermodel.Id}")">Edit</a> |
+            <a href="@($"/usermodels")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    UserModel? usermodel;
+
+    [SupplyParameterFromQuery]
+    public int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        usermodel = await DB.Users.FirstOrDefaultAsync(m => m.Id == Id);
+
+        if (usermodel is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}
