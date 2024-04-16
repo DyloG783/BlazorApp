@@ -1,0 +1,43 @@
+﻿@page "/usermodels/create"
+@inject BlazorApp1.Data.AppDbContext DB
+@using BlazorApp1.Models
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h4>UserModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="UserModel" OnValidSubmit="AddUserModel" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" />
+            <div class="mb-3">
+                <label for="username" class="form-label">UserName:</label> 
+                <InputText id="username" @bind-Value="UserModel.UserName" class="form-control" /> 
+                <ValidationMessage For="() => UserModel.UserName" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/usermodels">Back to List</a>
+</div>
+
+@code {
+
+    [SupplyParameterFromForm]
+    public UserModel UserModel { get; set; } = new();
+
+    // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+    public async Task AddUserModel()
+    {
+        DB.Users.Add(UserModel);
+        await DB.SaveChangesAsync();
+        NavigationManager.NavigateTo("/usermodels");
+    }
+}

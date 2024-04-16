@@ -1,0 +1,26 @@
+﻿@page "/usermodels"
+@rendermode InteractiveServer
+
+@using BlazorApp1.Data
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using BlazorApp1.Models
+
+@inject AppDbContext DB
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="usermodels/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="@DB.Users">
+    <PropertyColumn Property="usermodel => usermodel.UserName" />
+
+    <TemplateColumn Context="usermodel">
+        <a href="@($"usermodels/edit?id={usermodel.Id}")">Edit</a> |
+        <a href="@($"usermodels/details?id={usermodel.Id}")">Details</a> |
+        <a href="@($"usermodels/delete?id={usermodel.Id}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
