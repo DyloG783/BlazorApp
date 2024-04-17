@@ -7,7 +7,6 @@ The Interactive Server render mode enables the component to handle UI events fro
 
 @using BlazorApp1.Data
 @using BlazorApp1.Models
-@using BlazorApp1.Services
 @using Microsoft.EntityFrameworkCore
 
 @inject AppDbContext DB
@@ -43,7 +42,7 @@ Welcome to your new app.
     public HttpClient httpClient = new HttpClient();
     public Todo todo;
 
-    // model
+    // temp model
     public class Todo
     {
         public int userId { get; set; } 
