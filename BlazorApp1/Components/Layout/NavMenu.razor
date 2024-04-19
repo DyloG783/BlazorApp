@@ -1,4 +1,6 @@
-﻿<div class="ps-3 navbar navbar-dark">
+﻿@* @rendermode InteractiveServer *@
+
+<div class="ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Drummers Journey</a>
     </div>
@@ -6,33 +8,40 @@
 
 <input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+<div class="nav-scrollable d-flex justify-content-center">
 
-    <nav class="nav flex-column flex-sm-row justify-content-center">
+    <ul class="nav nav-tabs ">
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="learn">
+        <li class="nav-item dropdown px-3 ">
+            <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" ref="#" role="button" aria-expanded="false">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Learn
-            </NavLink>
-        </div>
+            </a>
+            @* <button type="button" data-bs-toggle="dropdown" ref="#" aria-expanded="false">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Learn
+            </button> *@
+            <ul class="dropdown-menu bg-secondary ">
+                <li><a class="dropdown-item nav-item text-white" href="#">Fundamentals</a></li>
+                <li><a class="dropdown-item nav-item text-white" href="#">Techniques</a></li>
+            </ul>
+        </li>
 
-        <div class="nav-item px-3">
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href="technique">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Technique
             </NavLink>
-        </div>
+        </li>
 
-        <div class="nav-item px-3">
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href="kit">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Kit
             </NavLink>
-        </div>
+        </li>
 
-        <div class="nav-item px-3">
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href="ask">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Ask
             </NavLink>
-        </div>
-    </nav>
+        </li>
+    </ul>
 </div>
 

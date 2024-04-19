@@ -1,6 +1,5 @@
 using BlazorApp1.Components;
 using BlazorApp1.Data;
-using BlazorApp1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 builder.Services.AddScoped<AppDbContext>();
-builder.Services.AddScoped<TitleService>();
+builder.Services.AddBlazorBootstrap();
 
 
 var app = builder.Build();
