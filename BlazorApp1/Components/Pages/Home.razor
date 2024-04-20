@@ -8,6 +8,66 @@ Doesn't work with cascading parameters
 *@
 @* @rendermode InteractiveServer  *@
 
+<PageTitle>Home</PageTitle>
+
+<div class="container-fluid">
+    <div class="row py-5">
+        <div class="col d-flex justify-content-end">
+            <Icon Name="IconName.Book" Size="IconSize.x1" Color="IconColor.Info"/>
+        </div>
+        <div class="col">
+            <h2 class="text-warning mt-2">Learn</h2>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col">
+            <section>
+                <h3>Fundamentals</h3>
+                <pre>
+This is a place to learn about the first things
+that will help you get started on the right foot
+                </pre>
+                <ul>
+                    <li>Kit configuration</li>
+                    <li>Drum sticks</li>
+                    <li>Basic techniques</li>
+                </ul>
+            </section>
+            
+        </div>
+        <div class="col ">
+            <section>
+                <h3>Techniques</h3>
+                <pre>
+Get a grip on drumming techniques whick are gauranteed
+to evolve your drumming skills to the next level such as...
+                </pre>
+                <ul>
+                    <li>Playing from the wrists</li>
+                    <li>Rebounding double strokes</li>
+                    <li>Singles to doubles exercise</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col">
+            <section>
+                <h3>Inspiration</h3>
+                <pre>
+Be inspired by a show case of some of the best drummers
+doing what they do best
+                </pre>
+                <div>
+                    <img src="images/drummer.jpg" alt="drummer" class="img-fluid" />
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
 @code
 {
     // Define the parameter to hold data passed to the layout
@@ -17,21 +77,12 @@ Doesn't work with cascading parameters
     protected override void OnInitialized()
     {
 
-        string description = @"
-            Welcome to Drummers Journey! 
-            This is a simple app to help you leran more about drumming and ask other drummers questions
-            to help you grow on your drumming journey.
-        ";
+        string description = @"Welcome to Drummers Journey!
+
+This is a simple app to help you leran more about
+drumming and ask other drummers questions
+to help you grow on your drumming journey";
         Layout.updateLayout("Home", description);
     }
 
 }
-
-<PageTitle>Home</PageTitle>
-
-<div>
-    <h1>Hello, world!</h1>
-    <p>Welcome to your new app.</p>
-
-</div>
-

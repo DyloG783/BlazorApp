@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Components\Layout\MainLayout.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazor.Bootstrap" Version="2.2.0" />
+    <PackageReference Include="bootstrap" Version="5.3.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />

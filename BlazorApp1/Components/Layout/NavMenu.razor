@@ -1,47 +1,43 @@
-﻿@* @rendermode InteractiveServer *@
-
-<div class="ps-3 navbar navbar-dark">
+﻿<div class="ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Drummers Journey</a>
+        <a class="navbar-brand d-flex " href="">
+            <Icon Name="IconName.AppIndicator" Size="IconSize.x1" Color="IconColor.Warning" />
+            <pre class="pt-1 px-3">@_Brand</pre>
+        </a>
     </div>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+@* <input type="checkbox" title="Navigation menu" class="navbar-toggler" /> *@
 
 <div class="nav-scrollable d-flex justify-content-center">
 
-    <ul class="nav nav-tabs ">
+    <ul class="nav nav-tabs">
 
-        <li class="nav-item dropdown px-3 ">
+        <li class="nav-item dropdown px-sm-5">
             <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" ref="#" role="button" aria-expanded="false">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Learn
             </a>
-            @* <button type="button" data-bs-toggle="dropdown" ref="#" aria-expanded="false">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Learn
-            </button> *@
             <ul class="dropdown-menu bg-secondary ">
+                <li><a class="dropdown-item nav-item text-white" href="learn">Overview</a></li>
                 <li><a class="dropdown-item nav-item text-white" href="#">Fundamentals</a></li>
-                <li><a class="dropdown-item nav-item text-white" href="#">Techniques</a></li>
+                <li><a class="dropdown-item nav-item text-white" href="technique">Techniques</a></li>
             </ul>
         </li>
 
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="technique">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Technique
-            </NavLink>
-        </li>
-
-        <li class="nav-item px-3">
+        <li class="nav-item px-sm-5">
             <NavLink class="nav-link" href="kit">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Kit
             </NavLink>
         </li>
 
-        <li class="nav-item px-3">
+        <li class="nav-item px-sm-5">
             <NavLink class="nav-link" href="ask">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Ask
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Ask
             </NavLink>
         </li>
     </ul>
 </div>
 
+@code {
+    string _Brand = "Drummers\nJourney";
+}

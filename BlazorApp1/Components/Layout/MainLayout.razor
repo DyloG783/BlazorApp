@@ -1,39 +1,30 @@
 ﻿@inherits LayoutComponentBase
 
 @* page is 100% vh*@
-<div class="page">
-    <div class="navigation">
+<div class="position-relative vh-100 d-flex flex-column">
+    <div class="bg-dark bg-gradient">
         <NavMenu />
     </div>
 
     @* cascading values allow passing data from child pages to this parent layout *@
     <CascadingValue Value="this">
         @* center body content middle of page *@
-        <main class="flex-growing bg-dark text-white">
-            <article class="flex-growing flex-column container-fluid">
-                <div class="row">
+        <main class="d-flex flex-grow-1 bg-dark bg-gradient text-white">
+            <article class="d-flex flex-grow-1 flex-column container-fluid">
+                <div class="row p-5 border-bottom">
                     <div class="col">
-                        <h1 class="text-center primary-theme-color py-5">@_Title</h1>
+                        <h1 class="text-info ">@_Title</h1>
+                    </div>
+                    <div class="col">
+                        <pre class="">@_Description</pre>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <p class="px-5 text-center ">@_Description</p>
-                    </div>
-                </div>
-                
-                <div class="flex-growing justify-content-center align-items-center">
+                <div class="d-flex flex-grow-1">
                     @Body
                 </div>
             </article>
         </main>
     </CascadingValue>
-</div>
-
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
 </div>
 
 @code {
