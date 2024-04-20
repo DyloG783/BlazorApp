@@ -1,0 +1,32 @@
+<div class="container-fluid border-bottom">
+
+    @* Kit header section *@
+    <div class="row py-4 py-sm-5 ">
+        <div class="col d-flex justify-content-center column-gap-3">
+            <Icon Name="IconName.EarFill" Size="IconSize.x1" Color="IconColor.Info" />
+            <h1 class="text-warning mt-2" style="font-size: 5rem;">Kit</h1>
+        </div>
+        <div class="col">
+            <pre>@description</pre>
+        </div>
+    </div>
+
+    @* main section *@
+    <section class="row py-4 py-sm-5 shadow">
+        <div class="col d-flex justify-content-center align-items-center" style="max-height: 300px;">
+            <ul>
+                <li>Electronic</li>
+                <li>Accoustic</li>
+                <li>Brand reviews</li>
+            </ul> 
+        </div>
+        <div class="col">
+            <img src="images/drums_m.jpg" class="border rounded " alt="drums image">
+        </div>
+
+    </section>
+</div>
+
+@code{
+    public string description = "This is a place to learn about the first things\nthat will help you get started on the right foot";
+}

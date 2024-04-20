@@ -47,6 +47,15 @@ h1:focus {
 }
 
 
+.fixed-size {
+    width: 400px; /* Set the desired width */
+    height: 400px; /* Set the desired height */
+}
+
+section li {
+    font: small-caps 1.2em/1.5em Georgia, serif;
+    padding-bottom: 0.5em;
+}
 
 
 
