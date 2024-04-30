@@ -1,17 +1,4 @@
 ﻿@page "/learn"
-@layout MainLayout
-
-@code {
-    // Define the parameter to hold data passed to the layout
-    [CascadingParameter]
-    public MainLayout Layout { get; set; }
-
-    protected override void OnInitialized()
-    {
-        string description = "This page is...";
-        Layout.updateLayout("Learn Page", description);
-    }
-}
 
 <PageTitle>Learn</PageTitle>
 

@@ -1,36 +1,38 @@
-﻿<div class="ps-3 navbar navbar-dark">
+﻿@rendermode InteractiveServer
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex " href="">
-            <Icon Name="IconName.AppIndicator" Size="IconSize.x1" Color="IconColor.Warning" />
-            <pre class="pt-1 px-3">@_Brand</pre>
+        <a class="navbar-brand d-flex gap-3" href="/">
+            <i class="bi bi-8-circle-fill" style="font-size: 2rem; color: aqua;"></i>
+            <pre>@_Brand</pre>
         </a>
     </div>
 </div>
 
-@* <input type="checkbox" title="Navigation menu" class="navbar-toggler" /> *@
+<!-- to use as nav button toggler on small screens -->
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
 
-<div class="nav-scrollable d-flex justify-content-center">
 
-    <ul class="nav nav-tabs">
+<div class="nav-scrollable">
 
-        <li class="nav-item dropdown px-sm-5">
-            <a class="nav-link dropdown-toggle " data-bs-toggle="dropdown" ref="#" role="button" aria-expanded="false">
+    <ul class="nav nav-tabs d-flex gap-sm-5">
+        <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" ref="#" role="button" aria-expanded="false">
                 <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Learn
             </a>
-            <ul class="dropdown-menu bg-secondary ">
-                <li><a class="dropdown-item nav-item text-white" href="learn">Overview</a></li>
+            <ul class="dropdown-menu bg-secondary">
                 <li><a class="dropdown-item nav-item text-white" href="#">Fundamentals</a></li>
                 <li><a class="dropdown-item nav-item text-white" href="technique">Techniques</a></li>
             </ul>
         </li>
 
-        <li class="nav-item px-sm-5">
+        <li class="nav-item ">
             <NavLink class="nav-link" href="kit">
                 <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Kit
             </NavLink>
         </li>
 
-        <li class="nav-item px-sm-5">
+        <li class="nav-item ">
             <NavLink class="nav-link" href="ask">
                 <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Ask
             </NavLink>
@@ -40,4 +42,12 @@
 
 @code {
     string _Brand = "Drummers\nJourney";
+
+    // bool isDisplayed = true;
+    // string displayStyle => isDisplayed ? "display: block !important;" : "display: none !important;";
+
+    // private void OnClick(MouseEventArgs e)
+    // {
+    //     isDisplayed = !isDisplayed;
+    // }
 }

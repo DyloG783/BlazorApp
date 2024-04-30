@@ -11,14 +11,14 @@
         @* center body content middle of page *@
         <main class="d-flex flex-grow-1 bg-dark bg-gradient text-white">
             <article class="d-flex flex-grow-1 flex-column container-fluid">
-                <div class="row p-5 border-bottom">
-                    <div class="col d-flex justify-content-center">
+               @*  <div class="row p-5 bg-dark bg-gradient">
+                    <div class="col d-flex justify-content-center pb-5 pb-sm-0">
                         <h1 class="text-info my-auto">@_Title</h1>
                     </div>
                     <div class="col">
-                        <pre class="">@_Description</pre>
+                        <p class="lead">@_Description</p>
                     </div>
-                </div>
+                </div> *@
                 <div class=" flex-grow-1">
                     @Body
                 </div>
@@ -28,13 +28,13 @@
 </div>
 
 @code {
-    public string _Title { get; set; }
-    public string _Description { get; set; }
+    // public string _Title { get; set; }
+    // public string _Description { get; set; }
 
-    public void updateLayout(string title, string description)
-    {
-        _Title = title;
-        _Description = description;
-        StateHasChanged();
-    }
+    // public void updateLayout(string title, string description)
+    // {
+    //     _Title = title;
+    //     _Description = description;
+    //     StateHasChanged();
+    // }
 }

@@ -1,6 +1,5 @@
 using BlazorApp1.Components.Layout;
 using BlazorApp1.Components.Pages;
-using BlazorBootstrap;
 using Moq;
 using System.Text.RegularExpressions;
 using System;
@@ -14,7 +13,7 @@ namespace BlazorApp1.Unit
     [TestClass]
     public class NavComponentTests : BunitTestContext
     {
-        private Mock<IIdGenerator> mockIdGenerator;
+        /*private Mock<IIdGenerator> mockIdGenerator;
 
         [TestInitialize]
         public void Setup()
@@ -28,7 +27,7 @@ namespace BlazorApp1.Unit
 
             // Register the mockIdGenerator with the service collection
             Services.AddSingleton(mockIdGenerator.Object);
-        }
+        }*/
 
         [TestMethod]
         public void TitleExistsInNav()
@@ -62,10 +61,9 @@ namespace BlazorApp1.Unit
 
             var dropDownLinks = cut.FindAll("a.dropdown-item");
 
-            Assert.AreEqual(3, dropDownLinks.Count);
-            Assert.IsTrue(Regex.IsMatch(dropDownLinks[0].InnerHtml, "Overview"));
-            Assert.IsTrue(Regex.IsMatch(dropDownLinks[1].InnerHtml, "Fundamentals"));
-            Assert.IsTrue(Regex.IsMatch(dropDownLinks[2].InnerHtml, "Technique"));
+            Assert.AreEqual(2, dropDownLinks.Count);
+            Assert.IsTrue(Regex.IsMatch(dropDownLinks[0].InnerHtml, "Fundamentals"));
+            Assert.IsTrue(Regex.IsMatch(dropDownLinks[1].InnerHtml, "Technique"));
         }
 
     }

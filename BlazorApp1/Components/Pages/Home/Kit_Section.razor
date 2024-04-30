@@ -1,32 +1,35 @@
-<div class="container-fluid border-bottom">
+<div class="container-fluid bg-secondary bg-gradient">
 
     @* Kit header section *@
-    <div class="row py-4 py-sm-5 ">
-        <div class="col d-flex justify-content-center column-gap-3">
-            <Icon Name="IconName.EarFill" Size="IconSize.x1" Color="IconColor.Info" />
-            <h1 class="text-warning mt-2" style="font-size: 5rem;">Kit</h1>
+    <div class="row py-5 shadow">
+        <div class="col d-flex justify-content-center column-gap-4">
+            @* <i class="bi bi-earbuds" style="font-size: 2.5rem; color: aqua;"></i> *@
+            <h2 class="mt-2 display-1 text-info">Kit</h2>
         </div>
-        <div class="col">
-            <pre>@description</pre>
+        <div class="col my-auto px-sm-5">
+            <p class="lead">
+                @description
+            </p>
+           
         </div>
     </div>
 
     @* main section *@
-    <section class="row py-4 py-sm-5 shadow">
-        <div class="col d-flex justify-content-center align-items-center" style="max-height: 300px;">
-            <ul>
-                <li>Electronic</li>
-                <li>Accoustic</li>
+    <section class="row py-4 py-sm-5">
+        <div class="col d-flex justify-content-center align-items-center" >
+            <ul class="font-monospace fs-4">
+                <li>Electronic drums</li>
+                <li>Accoustic drums</li>
                 <li>Brand reviews</li>
             </ul> 
         </div>
         <div class="col">
-            <img src="images/drums_m.jpg" class="border rounded " alt="drums image">
+            <img src="images/drums_m.jpg" class="border rounded img-fluid" alt="drums image">
         </div>
 
     </section>
 </div>
 
 @code{
-    public string description = "This is a place to learn about the first things\nthat will help you get started on the right foot";
+    public string description = "Wrap your head around different types of drums kits and accessorys.";
 }

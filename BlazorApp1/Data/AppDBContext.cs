@@ -6,8 +6,8 @@ namespace BlazorApp1.Data
     public class AppDbContext : DbContext
     {
         public IConfiguration _config { get; set; }
-        public AppDbContext(IConfiguration config) 
-        { 
+        public AppDbContext(IConfiguration config)
+        {
             _config = config;
         }
 
